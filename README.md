@@ -41,3 +41,12 @@ Assignment for Design Patterns Lecture
 - Play Random Move
 - Play Mirror Move
 - Interactions between different moves
+
+
+### Design Pattern:
+
+- We see that each move has different behaviour when interacting with different moves.
+- All these interactions must be implemented in their own class to make sure that the open/close principle is followed.
+
+- We also have a need to create different moves based on what is requested (random move, mirror move, etc.) 
+- I simply choose the `factory` design pattern for creation of these moves as it seems the most apt.
