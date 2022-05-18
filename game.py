@@ -1,44 +1,42 @@
-class Move:
+from interfaces import MoveStrategyInterface, MoveInterface
+
+
+class Move(MoveInterface):
     def __init__(self) -> None:
-        pass
+        self.set_move_strategy(None)
+
+    def __init__(self, strategy) -> None:
+        self.set_move_strategy(strategy)
+
+    def set_move_strategy(self, strategy: MoveStrategyInterface):
+        self.strategy = strategy
+
+    def get_move_strategy(self) -> MoveStrategyInterface:
+        return self.strategy
 
 
 class Rock(Move):
+
+    def __init__(self, strategy) -> None:
+        super().__init__(strategy)
+
     def __str__(self) -> str:
         return f"Rock! 🪨"
 
 
 class Paper(Move):
+
+    def __init__(self, strategy) -> None:
+        super().__init__(strategy)
+
     def __str__(self) -> str:
         return f"Paper! 📜"
 
 
 class Scissor(Move):
+
+    def __init__(self, strategy) -> None:
+        super().__init__(strategy)
+
     def __str__(self) -> str:
         return f"Scissor! ✂️"
-
-
-class MoveFactory:
-
-    def create_rock(self) -> Rock:
-        return Rock()
-
-    def create_paper(self) -> Paper:
-        return Paper()
-
-    def create_scissor(self) -> Scissor:
-        return Scissor()
-
-
-def game():
-    move_factory = MoveFactory()
-
-    rock = move_factory.create_rock()
-    paper = move_factory.create_paper()
-    scissor = move_factory.create_scissor()
-
-    print(rock, paper, scissor)
-
-
-if __name__ == '__main__':
-    game()
