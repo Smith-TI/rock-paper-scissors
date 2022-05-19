@@ -27,3 +27,26 @@ class MoveStrategyFactoryInterface:
 
     def create_scissor_strategy(self) -> MoveStrategyInterface:
         pass
+
+
+class PlayerInterface:
+    def select_move(self, move):
+        pass
+
+    def select_random_move(self):
+        pass
+
+    def select_mirror_move(self, opponent):
+        pass
+
+    def get_current_move(self):
+        pass
+
+    def get_previous_move(self):
+        pass
+
+    def add_move_to_history(self, move):
+        pass
+
+    def play_against(self, opponent):
+        pass

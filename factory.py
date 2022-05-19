@@ -19,6 +19,18 @@ class MoveFactory:
     def __init__(self) -> None:
         self.game_strategy_factory = MoveStrategyFactory()
 
+    def create_move(self, move):
+        if(move == 'rock'):
+            return self.create_rock()
+
+        if(move == 'paper'):
+            return self.create_paper()
+
+        if(move == 'scissor'):
+            return self.create_scissor()
+
+        raise ValueError('Invalid move')
+
     def create_rock(self):
         return Rock(self.game_strategy_factory.create_rock_strategy())
 
