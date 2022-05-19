@@ -50,3 +50,7 @@ Assignment for Design Patterns Lecture
 
 - We also have a need to create different moves based on what is requested (random move, mirror move, etc.)
 - I simply choose the `factory` design pattern for creation of these moves as it seems the most apt.
+
+
+# References
+

@@ -1,3 +1,4 @@
+import random
 from game import Rock, Paper, Scissor
 from interfaces import MoveStrategyFactoryInterface
 from strategies import RockStrategy, PaperStrategy, ScissorStrategy
@@ -26,4 +27,10 @@ class MoveFactory:
 
     def create_scissor(self):
         return Scissor(self.game_strategy_factory.create_scissor_strategy())
-	
+
+    def create_random(self):
+        return random.choice([
+            self.create_rock(),
+            self.create_paper(),
+            self.create_scissor()
+        ])
